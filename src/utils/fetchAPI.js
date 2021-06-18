@@ -1,5 +1,7 @@
 const axios = require('axios');
 
+/* fetching the data from the api based on query data passed */
+
 async function fetchAPI (tags, sortBy="id", direction="asc") {
     const sortValue = ['likes', 'reads', 'id', 'popularity']
     let url = `https://api.hatchways.io/assessment/blog/posts?`

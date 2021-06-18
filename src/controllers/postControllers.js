@@ -1,6 +1,7 @@
-const axios = require('axios');
 const express = require('express');
-const fetchAPI = require('../utils/fetchAPI')
+const fetchAPI = require('../utils/fetchAPI');
+
+/* Controller for Getting blog posts. Returns an array of blogs that matches the query */
 
 const getBlogPost = async (req, res, next) => {
     try {
@@ -10,7 +11,6 @@ const getBlogPost = async (req, res, next) => {
         sortBy = req.query.sortBy
         direction = req.query.direction
         const data = await fetchAPI(tags, sortBy, direction)
-        console.log('here', data, tags)
        return res.status(200).json({
             posts: data
         })
